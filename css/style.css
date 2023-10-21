@@ -3,6 +3,15 @@
     src: url('../fonts/ConcertOne-Regular.ttf');
 }
 
+@keyframes box_animate {
+    0%{
+        transform: translateY(-150%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+    
+}
 @keyframes on_input {
     from {border: 6px solid white;}
     to {border: 6px solid #ffdc7a;}
@@ -33,6 +42,7 @@ body, html{
     text-align: center;
 }
 #container #box{
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -40,6 +50,10 @@ body, html{
     border: 10px solid white;
     border-radius: 30px;
     backdrop-filter: blur(10px);
+    transform: translateY(0%);
+    animation-timing-function: cubic-bezier(0,.7,.43,1.01);
+    animation-name: box_animate;
+    animation-duration: 0.7s;
 }
 
 #name{
